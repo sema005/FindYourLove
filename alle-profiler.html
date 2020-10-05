@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 	<meta charset="UTF-8">
 	<title>FindYourLove</title>
@@ -7,6 +8,7 @@
 	<link rel="stylesheet" href="./css/nav.css">
 	<link rel="stylesheet" href="./css/alle-profiler/alleProfiler.css">
 </head>
+
 <body>
 	<nav>
 		<ul>
@@ -23,34 +25,32 @@
 		<section id="section-profiler">
 
 		</section>
-		
+
 	</div>
-	
+
 
 	<script>
+		var sectionProfiler = document.getElementById("section-profiler");
 
-		const sectionProfiler = document.getElementById("section-profiler");
-
-		const profiler = [
-			{
-				navn : "Ola",
-				alder :	20,
-				kjønn : "mann",
+		var profiler = [{
+				navn: "Ola",
+				alder: 20,
+				kjønn: "mann",
 				bosted: "Oslo",
-				interesser : "Teknologi, fotball, gaming",
-				bilde : "./images/man1.jpg"
+				interesser: "Teknologi, fotball, gaming",
+				bilde: "./images/man1.jpg"
 			},
 			{
-				navn : "Anders",
-				alder : 25,
-				kjønn : "mann",
+				navn: "Anders",
+				alder: 25,
+				kjønn: "mann",
 				bosted: "Hamar",
-				interesser : "Musikk, ",
-				bilde : "./images/man2.jpg"
+				interesser: "Musikk, ",
+				bilde: "./images/man2.jpg"
 			},
 			{
-				navn : "Thorvald",
-				alder : 34,
+				navn: "Thorvald",
+				alder: 34,
 				kjønn: "mann",
 				bosted: "Oslo",
 				interesser: "Biler, båter, vin",
@@ -83,7 +83,7 @@
 		]
 
 		var i;
-		for(i = 0; i < profiler.length; i++){
+		for (i = 0; i < profiler.length; i++) {
 			sectionProfiler.innerHTML += `
 				<article>
 					<div class="image-container">
@@ -98,8 +98,7 @@
 				</article>
 			`
 		}
-		
-
 	</script>
 </body>
+
 </html>

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 	<meta charset="UTF-8">
 	<title>Lag en profil</title>
@@ -7,6 +8,7 @@
 	<link rel="stylesheet" href="./css/nav.css">
 	<link rel="stylesheet" href="./css/valgfri/valgfri.css">
 </head>
+
 <body>
 	<nav>
 		<ul>
@@ -28,11 +30,11 @@
 				<label>Bilde</label>
 				<select id="images">
 					<option value="./images/man1.jpg">Mann</option>
-					<option value="./images/woman1.jpg">Kvinne</option> 
+					<option value="./images/woman1.jpg">Kvinne</option>
 				</select>
 				<label>Bosted:</label>
 				<input id="input-residence" type="text">
-				<input id="button" type="button" onclick="addProfile()" value="legg til profil">
+				<input id="button" type="button" onclick="addProfile()" value="Legg til profil">
 			</section>
 		</div>
 		<section id="section-profiles">
@@ -54,7 +56,7 @@
 		function addProfile() {
 
 			let test = inputImage.selectedIndex;
-			
+
 			let name = inputName.value
 			let age = inputAge.value
 			let gender = inputGender.value
@@ -72,11 +74,11 @@
 
 			console.log(profiler)
 			console.log(test)
-		
 
-		var i;
-		for(i = 0; i < profiler.length; i++){
-			sectionProfiler.innerHTML = `
+
+			var i;
+			for (i = 0; i < profiler.length; i++) {
+				sectionProfiler.innerHTML = `
 				<article>
 					<div class="image-container">
 						<img src="${profiler[i].image}" alt="Bilde av personen"/>
@@ -88,8 +90,9 @@
 					</div>
 				</article>
 			`
+			}
 		}
-	}
 	</script>
 </body>
+
 </html>

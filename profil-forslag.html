@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 	<meta charset="UTF-8">
 	<title>Et forslag</title>
@@ -7,8 +8,9 @@
 	<link rel="stylesheet" href="./css/nav.css">
 	<link rel="stylesheet" href="./css/profil-forslag/profilForslag.css">
 </head>
+
 <body>
-	
+
 	<nav>
 		<ul>
 			<li><a href="alle-profiler.html">Alle profiler</a></li>
@@ -17,85 +19,84 @@
 		</ul>
 	</nav>
 	<div>
-		
+
 		<header>
 			<h1>FindYourLove</h1>
 		</header>
-		
-		
+
+
 		<main>
-		
-			<section class="input-section"> 
+
+			<section class="input-section">
 				<label>Tast inn ønsket alder</label>
 				<input id="input-age" type="number"><br>
 				<label>Mann eller kvinne?</label>
 				<input id="input-gender" type="text">
 				<input id="button" type="button" onclick="findProfile()" value="Vis forslag">
 			</section>
-			
+
 			<section id="profile-section">
 				<!-- Skriv ut en profil her -->
 			</section>
-			
+
 		</main>
 	</div>
-	
+
 
 	<script>
-		var givenAge = document.getElementById("input-age")
-		var givenGender = document.getElementById("input-gender")
+		var givenAge = document.getElementById("input-age");
+		var givenGender = document.getElementById("input-gender");
 		var profileSection = document.getElementById("profile-section");
-		var button = document.getElementById("button")
+		var button = document.getElementById("button");
 
 
-	var profiler = [
-  ["Ola", 20, "mann", "./images/man1.jpg", "Oslo"],
-  ["Anders", 25, "mann", "./images/man2.jpg", "Hamar"],
-  ["Thorvald", 34, "mann", "./images/man3.JPG", "Oslo"],
-  ["Ronja", 32, "kvinne", "./images/woman1.jpg", "Oslo"],
-  ["Lene", 18, "kvinne", "./images/woman2.jpg", "Gol"],
-  ["Silje", 27, "kvinne", "./images/woman3.jpg", "Hamar"],
-];
-
-
-
-function findProfile() {
-  var wantedAge = parseInt(givenAge.value);
-  var wantedGender = givenGender.value.toLowerCase();
- 
-  var matchesFound = [];
- 
-  for (var i = 0; i < profiler.length; i++) {
-    var profile = profiler[i];
- 
-    var profileAge = profile[1];
-    var profileGender = profile[2];
- 
-    if (
-      wantedAge >= 25 &&
-      profileAge >= 25 &&
-      profileGender === wantedGender
-    ) {
-      matchesFound.push(profile);
-    } else if (
-      wantedAge < 25 &&
-      profileAge < 25 &&
-      profileGender === wantedGender
-    ) {
-      matchesFound.push(profile);
-    }
-    profileSection.innerHTML = "";
-  }
-  
-displayMatch(matchesFound)
-}
+		var profiler = [
+			["Ola", 20, "mann", "./images/man1.jpg", "Oslo"],
+			["Anders", 25, "mann", "./images/man2.jpg", "Hamar"],
+			["Thorvald", 34, "mann", "./images/man3.JPG", "Oslo"],
+			["Ronja", 32, "kvinne", "./images/woman1.jpg", "Oslo"],
+			["Lene", 18, "kvinne", "./images/woman2.jpg", "Gol"],
+			["Silje", 27, "kvinne", "./images/woman3.jpg", "Hamar"],
+		];
 
 
 
-function displayMatch(matches) {
-  var randomMatch = Math.floor(Math.random() * matches.length);
-  var match = matches[randomMatch];
-  profileSection.innerHTML += `
+		function findProfile() {
+			var wantedAge = parseInt(givenAge.value);
+			var wantedGender = givenGender.value.toLowerCase();
+
+			var matchesFound = [];
+
+			for (var i = 0; i < profiler.length; i++) {
+				var profile = profiler[i];
+
+				var profileAge = profile[1];
+				var profileGender = profile[2];
+
+				if (
+					wantedAge >= 25 &&
+					profileAge >= 25 &&
+					profileGender === wantedGender
+				) {
+					matchesFound.push(profile);
+				} else if (
+					wantedAge < 25 &&
+					profileAge < 25 &&
+					profileGender === wantedGender
+				) {
+					matchesFound.push(profile);
+				}
+				profileSection.innerHTML = "";
+			}
+			displayMatch(matchesFound);
+		}
+
+
+
+		function displayMatch(matches) {
+			var randomMatch = Math.floor(Math.random() * matches.length);
+			var match = matches[randomMatch];
+			profileSection.innerHTML = `
 		<article>
 			<div class="image-container">
 				<img src="${match[3]}" alt="Bilde av personen"/>
@@ -107,7 +108,8 @@ function displayMatch(matches) {
 			</div>
 		</article>
         `;
-}		
+		}
 	</script>
 </body>
+
 </html>
