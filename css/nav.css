@@ -1,0 +1,31 @@
+/*
+    CSS felles til alle html filer for nav bar
+*/
+nav {
+    width: 100vw;
+    background-color: crimson;
+
+}
+
+ul{
+    width: 450px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    list-style: none;
+    padding: 15px;
+}
+
+li{
+    text-align: center;
+}
+
+a {
+    font-size: 24px;
+    color: black;
+    text-decoration: none;
+    padding: 10px;
+}
+
+a:hover{
+    color: white;
+}

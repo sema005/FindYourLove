@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>FindYourLove</title>
+	<link rel="stylesheet" href="./css/index.css">
+	<link rel="stylesheet" href="./css/nav.css">
+	<link rel="stylesheet" href="./css/alle-profiler/alleProfiler.css">
+</head>
+<body>
+	<nav>
+		<ul>
+			<li><a class="active" href="alle-profiler.html">Alle profiler</a></li>
+			<li><a href="profil-forslag.html">Profil forslag</a></li>
+			<li><a href="valgfri-funksjonalitet.html">Lag en profil</a></li>
+		</ul>
+	</nav>
+
+	<div>
+		<header>
+			<h1>FindYourLove - Alle profiler</h1>
+		</header>
+		<section id="section-profiler">
+
+		</section>
+		
+	</div>
+	
+
+	<script>
+
+		const sectionProfiler = document.getElementById("section-profiler");
+
+		const profiler = [
+			{
+				navn : "Ola",
+				alder :	20,
+				kjønn : "mann",
+				bosted: "Oslo",
+				interesser : "Teknologi, fotball, gaming",
+				bilde : "./images/man1.jpg"
+			},
+			{
+				navn : "Anders",
+				alder : 25,
+				kjønn : "mann",
+				bosted: "Hamar",
+				interesser : "Musikk, ",
+				bilde : "./images/man2.jpg"
+			},
+			{
+				navn : "Thorvald",
+				alder : 34,
+				kjønn: "mann",
+				bosted: "Oslo",
+				interesser: "Biler, båter, vin",
+				bilde: "./images/man3.JPG"
+			},
+			{
+				navn: "Ronja",
+				alder: 32,
+				kjønn: "kvinne",
+				bosted: "Oslo",
+				interesser: "Biler, vin, interiør",
+				bilde: "./images/woman1.jpg"
+			},
+			{
+				navn: "Lene",
+				alder: 18,
+				kjønn: "kvinne",
+				bosted: "Gol",
+				interesser: "Bondelivet, traktor",
+				bilde: "./images/woman2.jpg",
+			},
+			{
+				navn: "Silje",
+				alder: 27,
+				kjønn: "kvinne",
+				bosted: "Hamar",
+				interesser: "Teknologi, mote  ",
+				bilde: "./images/woman3.jpg"
+			}
+		]
+
+		var i;
+		for(i = 0; i < profiler.length; i++){
+			sectionProfiler.innerHTML += `
+				<article>
+					<div class="image-container">
+						<img src="${profiler[i].bilde}" alt="Bilde av personen"/>
+					</div>
+					<div class="informasjon-container">
+						<p><strong>Navn</strong>: ${profiler[i].navn}</p>
+						<p><strong>Alder</strong>: ${profiler[i].alder}år</p>
+						<p><strong>Bosted</strong>: ${profiler[i].bosted}</p>
+						<p><strong>Interesser</strong>: ${profiler[i].interesser}</p>
+					</div>
+				</article>
+			`
+		}
+		
+
+	</script>
+</body>
+</html>

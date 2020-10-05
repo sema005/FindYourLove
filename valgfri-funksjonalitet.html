@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Lag en profil</title>
+	<link rel="stylesheet" href="./css/index.css">
+	<link rel="stylesheet" href="./css/nav.css">
+	<link rel="stylesheet" href="./css/valgfri/valgfri.css">
+</head>
+<body>
+	<nav>
+		<ul>
+			<li><a href="alle-profiler.html">Alle profiler</a></li>
+			<li><a href="profil-forslag.html">Profil forslag</a></li>
+			<li><a class="active" href="valgfri-funksjonalitet.html">Lag en profil</a></li>
+		</ul>
+	</nav>
+
+	<div class="page">
+		<div class="inputs">
+			<section>
+				<label>Navnet ditt:</label>
+				<input id="input-name" type="text">
+				<label>Alder:</label>
+				<input id="input-age" type="number">
+				<label>Kjønn:</label>
+				<input id="input-gender" type="text">
+				<label>Bilde</label>
+				<select id="images">
+					<option value="./images/man1.jpg">Mann</option>
+					<option value="./images/woman1.jpg">Kvinne</option> 
+				</select>
+				<label>Bosted:</label>
+				<input id="input-residence" type="text">
+				<input id="button" type="button" onclick="addProfile()" value="legg til profil">
+			</section>
+		</div>
+		<section id="section-profiles">
+
+		</section>
+	</div>
+
+	<script>
+		var inputName = document.getElementById("input-name")
+		var inputAge = document.getElementById("input-age")
+		var inputGender = document.getElementById("input-gender")
+		var inputImage = document.getElementById("images")
+		var inputResidence = document.getElementById("input-residence")
+
+		var sectionProfiler = document.getElementById("section-profiles")
+
+		var profiler = []
+
+		function addProfile() {
+
+			let test = inputImage.selectedIndex;
+			
+			let name = inputName.value
+			let age = inputAge.value
+			let gender = inputGender.value
+			let image = inputImage.options[test].value
+			let residence = inputResidence.value
+
+			profiler.push({
+				name: name,
+				age: age,
+				gender: gender,
+				residence: residence,
+				image: image
+			})
+
+
+			console.log(profiler)
+			console.log(test)
+		
+
+		var i;
+		for(i = 0; i < profiler.length; i++){
+			sectionProfiler.innerHTML = `
+				<article>
+					<div class="image-container">
+						<img src="${profiler[i].image}" alt="Bilde av personen"/>
+					</div>
+					<div class="informasjon-container">
+						<p><strong>Navn</strong>: ${profiler[i].name}</p>
+						<p><strong>Alder</strong>: ${profiler[i].age}år</p>
+						<p><strong>Bosted</strong>: ${profiler[i].residence}</p>
+					</div>
+				</article>
+			`
+		}
+	}
+	</script>
+</body>
+</html>
