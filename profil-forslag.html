@@ -44,21 +44,12 @@
 
 
 	<script>
-		var givenAge = document.getElementById("input-age");
-		var givenGender = document.getElementById("input-gender");
+		var inputAge = document.getElementById("input-age");
+		var inputGender = document.getElementById("input-gender");
 		var profileSection = document.getElementById("profile-section");
 		var button = document.getElementById("button");
 
-		/*
-				var profiler = [
-					["Ola", 20, "mann", "./images/man1.jpg", "Oslo"],
-					["Anders", 25, "mann", "./images/man2.jpg", "Hamar"],
-					["Thorvald", 34, "mann", "./images/man3.JPG", "Oslo"],
-					["Ronja", 32, "kvinne", "./images/woman1.jpg", "Oslo"],
-					["Lene", 18, "kvinne", "./images/woman2.jpg", "Gol"],
-					["Silje", 27, "kvinne", "./images/woman3.jpg", "Hamar"],
-				];
-		*/
+		
 		var profiler = [{
 				navn: "Ola",
 				alder: 20,
@@ -112,8 +103,8 @@
 
 
 		function findProfile() {
-			var wantedAge = parseInt(givenAge.value);
-			var wantedGender = givenGender.value.toLowerCase();
+			var wantedAge = parseInt(inputAge.value);
+			var wantedGender = inputGender.value.toLowerCase();
 
 			var matchesFound = [];
 
