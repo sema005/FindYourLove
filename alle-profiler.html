@@ -32,7 +32,7 @@
 	<script>
 		var sectionProfiler = document.getElementById("section-profiler");
 
-		var profiler = [{
+		var profiles = [{
 				navn: "Ola",
 				alder: 20,
 				kjønn: "mann",
@@ -83,17 +83,17 @@
 		]
 
 		var i;
-		for (i = 0; i < profiler.length; i++) {
+		for (i = 0; i < profiles.length; i++) {
 			sectionProfiler.innerHTML += `
 				<article>
 					<div class="image-container">
-						<img src="${profiler[i].bilde}" alt="Bilde av personen"/>
+						<img src="${profiles[i].bilde}" alt="Bilde av personen"/>
 					</div>
 					<div class="informasjon-container">
-						<p><strong>Navn</strong>: ${profiler[i].navn}</p>
+						<p><strong>Navn</strong>: ${profiles[i].navn}</p>
 						<p><strong>Alder</strong>: ${profiler[i].alder}år</p>
-						<p><strong>Bosted</strong>: ${profiler[i].bosted}</p>
-						<p><strong>Interesser</strong>: ${profiler[i].interesser}</p>
+						<p><strong>Bosted</strong>: ${profiles[i].bosted}</p>
+						<p><strong>Interesser</strong>: ${profiles[i].interesser}</p>
 					</div>
 				</article>
 			`
