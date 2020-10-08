@@ -19,14 +19,10 @@
 		</ul>
 	</nav>
 	<div>
-
 		<header>
 			<h1>FindYourLove</h1>
 		</header>
-
-
 		<main>
-
 			<section class="input-section">
 				<label>Tast inn ønsket alder</label>
 				<input id="input-age" type="number"><br>
@@ -34,22 +30,17 @@
 				<input id="input-gender" type="text">
 				<input id="button" type="button" onclick="findProfile()" value="Vis forslag">
 			</section>
-
 			<section id="profile-section">
 				<!-- Skriv ut en profil her -->
 			</section>
-
 		</main>
 	</div>
-
-
 	<script>
 		var inputAge = document.getElementById("input-age");
 		var inputGender = document.getElementById("input-gender");
 		var profileSection = document.getElementById("profile-section");
 		var button = document.getElementById("button");
 
-		
 		var profiler = [{
 				navn: "Ola",
 				alder: 20,
@@ -100,8 +91,6 @@
 			}
 		]
 
-
-
 		function findProfile() {
 			var wantedAge = parseInt(inputAge.value);
 			var wantedGender = inputGender.value.toLowerCase();
@@ -131,7 +120,6 @@
 			}
 			displayMatch(matchesFound);
 		}
-
 
 
 		function displayMatch(matches) {
